@@ -1,0 +1,45 @@
+environment:
+  delta_t: 15 # minutes
+  run_time: 4320 # minutes
+  reward: "custom"
+  observation_space : 
+    hour_of_day: # Discrete space: can change n and start values
+      n: 24
+      start: 0
+    room_temperature: # Box space: can change min and max values
+      low: 5.0
+      high: 40.0
+    room_temperature_setpoint:
+      low: 5.0
+      high: 30.0
+    dhw_temperature:
+      low: 10.0
+      high: 90.0
+    heatpump_power_consumed:
+      low: 0.0
+      high: 10000.0
+    heatpump_circulation_pump_running:
+      n: 2
+      start: 0
+    heatpump_flow_rate:
+      low: 0.0
+      high: 200.0
+  action_space: 
+    room_temperature_setpoint: # Discrete space: can change n and start values
+      low: 5.0
+      high: 40.0
+    dhw_temperature_setpoint:
+      low: 30.0
+      high: 60.0
+
+credentials:
+  client_id : "homelab-gym"
+  client_secret: "9XXCEsCiX0RO61AT0MEY"
+  token: "NjVmMmNiNmFiZDQ4MWIzMTUwNzhiMGRhOjRhNWNlZGNiLTAzMDUtNDJmNS1hMzBlLWYwMjBhYjUzYTQ0ZA=="
+  
+battery:
+  included: true
+heatpump:
+  included: true
+pv:
+  included: true
